@@ -2,39 +2,61 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as actions from '../redux/actions';
+import Post from './Post.jsx';
 
 @connect((store) => {
   return {
     ready: store.ready,
-    data: store.data
+    data: store.data,
+    input: store.input
   }
 }, (dispatch) => {
   return {
-      actions: bindActionCreators(actions, dispatch)
+    actions: bindActionCreators(actions, dispatch)
   }
 })
 
 export default class App extends Component {
 
+  constructor(props) {
+      super(props);
+      this.handleSubmit = this.handleSubmit.bind(this);
+      this.handleChange = this.handleChange.bind(this);
+  } 
+
   componentWillMount() {
-    //this.props.getData
+    this.props.actions.getData()
+  }
+
+  handleChange(e) {
+    this.props.actions.updateField(e);
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    let sub = this.props.input;
+    this.props.actions.gotoSub(sub);
+  }
+
+  createPost(post) {
+    return <Post key={post.data.id} data={ post } />
+  }
+
+  createPosts(posts) {
+    return posts.map(this.createPost);
   }
 
 	render() {
-
-    console.log(this.props)
-
-    const { data, ready } = this.props;
-    const posts = data.data.children.map(child => 
-      <div key={child.data.id}>
-        <p>{child.data.subreddit}</p>
-        <p>{child.data.title}</p>
-      </div>)
+    const { data, ready, input } = this.props;
 
     if(ready) {
       return (
           <div>
-            { posts }
+          <form onSubmit={ this.handleSubmit }>
+            <input placeholder="/r/" type="text" value={this.props.input} onChange={this.handleChange} />
+            <button>Go</button>
+          </form>
+          { this.createPosts(data.data.children) }
           </div>
       );
     } else {
@@ -44,6 +66,7 @@ export default class App extends Component {
         </div>
       );
     }
+
 	}
 }
 
