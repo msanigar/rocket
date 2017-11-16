@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import * as actions from "../redux/actions";
+import * as actionsCreators from "../redux/actionCreators";
 import Post from "./Post.jsx";
 
 @connect(
@@ -14,7 +14,7 @@ import Post from "./Post.jsx";
   },
   dispatch => {
     return {
-      actions: bindActionCreators(actions, dispatch)
+      actionsCreators: bindActionCreators(actionsCreators, dispatch)
     };
   }
 )
@@ -27,17 +27,17 @@ export default class App extends Component {
   }
 
   componentWillMount() {
-    this.props.actions.getData();
+    this.props.actionsCreators.getPosts();
   }
 
   handleChange(e) {
-    this.props.actions.updateField(e);
+    this.props.actionsCreators.updateSub(e);
   }
 
   handleSubmit(e) {
     e.preventDefault();
     let sub = this.props.input;
-    this.props.actions.getData(sub);
+    this.props.actionsCreators.getPosts(sub);
   }
 
   createPost(post) {

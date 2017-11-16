@@ -1,37 +1,20 @@
-/* eslint-disable no-use-before-define */
-
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import { loadState, saveState } from './localStorage';
-import { GET_DATA, UPDATE_FIELD } from './actions';
+import { GET_DATA, UPDATE_FIELD, getDataAction, updateFieldAction } from "./actions";
 
 const mainReducer = (state = initialState, action) => {
 
 	if (action.type === GET_DATA) {
-		return getData(state, action);
+		return getDataAction(state, action);
 	}
 
 	if (action.type === UPDATE_FIELD) {
-		return updateField(state, action);
+		return updateFieldAction(state, action);
 	}
 
 	return state;
 };
-
-function getData(state, action) {
-	var newState = Object.assign({}, state);
-	var obj = action.data.data;
-	newState.data = obj;
-    newState.ready = true;
-	return newState;
-}
-
-function updateField(state, action) {
-	var newState = Object.assign({}, state);
-	var val = action.event;
-	newState.input = val;
-	return newState;
-}
 
 const initialState = {
 	data: {},
