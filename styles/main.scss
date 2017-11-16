@@ -14,6 +14,14 @@ h1, h2, h3, h4, h5, p, a, span {
     }
 }
 
+img.placeholder {
+    background: url('../build/img/on_color_large.png');
+    min-width: 100%;
+    min-height: 100%;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
 .primary {
     color: $primary-color;
 }
@@ -29,6 +37,14 @@ i.fa-rocket {
 .post {
     margin-bottom: 28px;
     border-bottom: 1px solid $primary-color;
+    padding-bottom: 1rem;
+
+    a {
+        display: block;
+        float: left;
+        width: 100%;
+        height: 100%;
+    }
 }
 
 .sub-search {

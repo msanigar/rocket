@@ -7,7 +7,7 @@ const Post = (props) => {
     return(
         <div key={data.id} className="row post">
             <div className="column column-25">
-                <a href={reddit + data.permalink}><img src={data.preview ? data.preview.images[0].source.url : 'build/img/on_color_large.png'} /></a>
+                <a href={reddit + data.permalink}><img className="placeholder" src={data.preview ? data.preview.images[0].source.url : 'build/img/on_color_large.png'} /></a>
                 <p className="center"><small>points: {data.score}</small></p>
             </div>
             <div className="column column-75">

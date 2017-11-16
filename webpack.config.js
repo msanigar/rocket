@@ -30,6 +30,13 @@ module.exports = {
         exclude: /node_modules/,
       },
       {
+        test: /\.(gif|png|jpe?g|svg)$/i,
+        loaders: [
+          'file-loader?hash=sha512&digest=hex&name=[hash].[ext]',
+          'image-webpack-loader'
+        ]
+      },
+      {
         test: /\.scss$/,
         use: ExtractTextPlugin.extract({
           fallback: "style-loader",
