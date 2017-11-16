@@ -3,16 +3,12 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import { loadState, saveState } from './localStorage';
-import { GET_DATA, GOTO_SUB, UPDATE_FIELD } from './actions';
+import { GET_DATA, UPDATE_FIELD } from './actions';
 
 const mainReducer = (state = initialState, action) => {
 
 	if (action.type === GET_DATA) {
 		return getData(state, action);
-	}
-
-	if (action.type === GOTO_SUB) {
-		return gotoSub(state, action);
 	}
 
 	if (action.type === UPDATE_FIELD) {
@@ -27,13 +23,6 @@ function getData(state, action) {
 	var obj = action.data.data;
 	newState.data = obj;
     newState.ready = true;
-	return newState;
-}
-
-function gotoSub(state, action) {
-	var newState = Object.assign({}, state);
-	var obj = action.data.data;
-	newState.data = obj;
 	return newState;
 }
 

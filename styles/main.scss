@@ -1,4 +1,3 @@
-@import 'reset';
 @import 'vars';
 
 h1, h2, h3, h4, h5, p, a, span {
@@ -8,9 +7,38 @@ h1, h2, h3, h4, h5, p, a, span {
         background-color: $primary-color;
         color: #fff;
     }
+
+    &.center {
+        text-align: center;
+    }
+}
+
+.primary {
+    color: $primary-color;
+}
+
+i.fa-rocket {
+    color: $primary-color;
 }
 
 .column.center {
     margin: 0 auto;
 }
 
+.post {
+    margin-bottom: 28px;
+    border-bottom: 1px solid $primary-color;
+}
+
+.sub-search {
+    display: flex;
+
+    input {
+        display: flex;
+        flex: 9;
+    }
+    button {
+        margin-left: 2%;
+        text-align: center;
+    }
+}
