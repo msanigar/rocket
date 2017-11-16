@@ -27,7 +27,11 @@ export default class App extends Component {
   }
 
   componentWillMount() {
-    this.props.actionsCreators.getPosts();
+    if(this.props.input) {
+      this.props.actionsCreators.getPosts(this.props.input);
+    } else {
+      this.props.actionsCreators.getPosts();
+    }
   }
 
   handleChange(e) {
@@ -67,7 +71,7 @@ export default class App extends Component {
     } else {
       return (
         <div>
-          <p>Loading...</p>
+          <div className="loader">Loading...</div>
         </div>
       );
     }
