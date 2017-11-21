@@ -1,4 +1,5 @@
 import React from 'react';
+import { Test, Strong } from './styles';
 
 const Post = (props) => {
     const { data } = props.data;
@@ -11,6 +12,10 @@ const Post = (props) => {
                 <p className="center"><small>points: {data.score}</small></p>
             </div>
             <div className="column column-75">
+
+            <Strong>This is a test</Strong>
+            <Test>This is also a test</Test>
+
                 <p>
                 <strong>{data.title}</strong>
                 </p>
@@ -22,4 +27,4 @@ const Post = (props) => {
     );
 }
 
-export default Post
+export default Post;

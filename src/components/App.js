@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import * as actionsCreators from "../redux/actionCreators";
-import Post from "./Post.jsx";
+import Post from "./Post/Post";
+import Blurb from "./Blurb/Blurb";
 
 @connect(
   store => {
@@ -65,6 +66,7 @@ export default class App extends Component {
             />
             <button>Go</button>
           </form>
+          <Blurb />
           {data.data.children.map(this.createPost)}
         </div>
       );
