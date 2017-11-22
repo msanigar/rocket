@@ -6,6 +6,7 @@ const Blurb = (props) => {
         <Container>
             <Title>This is a test component fully styled with 'Styled Component!'</Title>
             <SubTitle>it's f**king awesome!</SubTitle>
+            <SubTitle>Prop: {props.prop || 'no props!'} </SubTitle>
         </Container>
     );
 }

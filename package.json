@@ -7,7 +7,9 @@
     "test": "test",
     "windows": "SET NODE_ENV=development & node server.js --hot",
     "start": "NODE_ENV=development node server.js --hot",
-    "build": "webpack"
+    "build": "webpack",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "repository": {
     "type": "git",
@@ -54,7 +56,10 @@
     "styled-components": "^2.2.3",
     "webpack": "^3.8.1",
     "webpack-dashboard": "^1.0.2",
-    "webpack-dev-server": "^2.9.4"
+    "webpack-dev-server": "^2.9.4",
+    "@storybook/react": "^3.2.16",
+    "@storybook/addon-actions": "^3.2.16",
+    "@storybook/addon-links": "^3.2.16"
   },
   "browserslist": [
     "> 1%",
