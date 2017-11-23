@@ -9,7 +9,8 @@ import Check from '../src/components/Check/Check';
 
 import { Button, Welcome } from '@storybook/react/demo';
 
-storiesOf('Welcome', module).add('to Storybook', () => <Welcome showApp={linkTo('Button')} />);
+storiesOf('Welcome', module)
+  .add('to Storybook', () => <Welcome showApp={linkTo('Button')} />);
 
 storiesOf('Button', module)
   .add('with text', () => <Button onClick={action('clicked')}>Hello Button</Button>)
@@ -19,5 +20,5 @@ storiesOf('Blurb', module)
   .add('without prop', () => <Blurb />)
   .add('with prop', () => <Blurb prop={'myles!'} />);
 
-  storiesOf('Check', module)
-    .add('i dunno', () => <Check />)
+storiesOf('Check', module)
+  .add('i dunno', () => <Check />)

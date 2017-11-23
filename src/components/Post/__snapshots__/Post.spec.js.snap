@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Post should match snapshot 1`] = `
+<div
+  className="row post"
+>
+  <div
+    className="column column-25"
+  >
+    <a
+      href="http://reddit.com/2"
+    >
+      <img
+        className="placeholder"
+        src="3"
+      />
+    </a>
+    <p
+      className="center"
+    >
+      <small>
+        points: 
+        4
+      </small>
+    </p>
+  </div>
+  <div
+    className="column column-75"
+  >
+    <strong
+      className="sc-bdVaJa eBZPoX"
+    >
+      This is a test
+    </strong>
+    <h5
+      className="sc-bwzfXH jdItCc"
+    >
+      This is also a test
+    </h5>
+    <p>
+      <strong />
+    </p>
+    <p>
+      <small>
+        /r/
+        5
+      </small>
+       |
+      <small>
+        author: 
+        6
+      </small>
+       |
+      <small>
+        <em>
+          <a
+            href="http://reddit.com/2"
+          >
+            view on reddit.com
+          </a>
+        </em>
+      </small>
+    </p>
+  </div>
+</div>
+`;

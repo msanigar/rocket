@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Blurb should match snapshot 1`] = `
+<div
+  className="sc-bdVaJa hnkImK"
+>
+  <h1
+    className="sc-bwzfXH hsxXBG"
+  >
+    This is a test component fully styled with 'Styled Component!'
+  </h1>
+  <h1
+    className="sc-htpNat fkulAY"
+  >
+    it's f**king awesome!
+  </h1>
+  <h1
+    className="sc-htpNat fkulAY"
+  >
+    Prop: 
+    no props!
+     
+  </h1>
+</div>
+`;
