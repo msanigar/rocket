@@ -12,7 +12,7 @@ module.exports = {
     extensions: ['.js', '.jsx']
   },
   entry: [
-    'webpack-dev-server/client?http://localhost:3000',
+    'webpack-dev-server/client?http://localhost:7777',
     './src/index.js',
     './styles/main.scss'
   ],

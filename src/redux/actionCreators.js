@@ -1,15 +1,15 @@
-import { GET_DATA, UPDATE_FIELD, UPDATE_READY } from "./actions";
+import { GET_DATA, UPDATE_FIELD, UPDATE_READY } from "./actionTypes";
 
 import axios from 'axios';
 
 export function getPosts(sub) {
-	return (dispatch, getState) => {    
+	return (dispatch, getState) => {
         dispatch({ event: false, type: UPDATE_READY });
 		getRedditData(sub ? sub : 'all').then(function(response) {
             dispatch({ data: response, type: GET_DATA });
             dispatch({ event: true, type: UPDATE_READY });
         });
-        
+
 		function getRedditData(sub) {
 			return new Promise(function(resolve, reject) {
 				axios.get(`https://www.reddit.com/r/${sub}.json`).then(function(response){
@@ -20,10 +20,10 @@ export function getPosts(sub) {
                     axios.get(`https://www.reddit.com/r/all.json`).then(function(response){
                         resolve(response ? response : {})
                     });
-                }); 
+                });
             });
         }
-        
+
 	};
 }
 

@@ -27,16 +27,6 @@ exports[`Post should match snapshot 1`] = `
   <div
     className="column column-75"
   >
-    <strong
-      className="sc-bdVaJa eBZPoX"
-    >
-      This is a test
-    </strong>
-    <h5
-      className="sc-bwzfXH jdItCc"
-    >
-      This is also a test
-    </h5>
     <p>
       <strong />
     </p>

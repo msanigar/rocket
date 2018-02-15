@@ -5,7 +5,6 @@ import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
 
 import Blurb from '../src/components/Blurb/Blurb';
-import Check from '../src/components/Check/Check';
 
 import { Button, Welcome } from '@storybook/react/demo';
 
@@ -19,6 +18,3 @@ storiesOf('Button', module)
 storiesOf('Blurb', module)
   .add('without prop', () => <Blurb />)
   .add('with prop', () => <Blurb prop={'myles!'} />);
-
-storiesOf('Check', module)
-  .add('i dunno', () => <Check />)

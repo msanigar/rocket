@@ -6,7 +6,7 @@ import mainReducer from './mainReducer.js';
 const initialState = {
 	data: {},
 	ready: false,
-	input: ''
+	input: '',
 };
 
 let store;

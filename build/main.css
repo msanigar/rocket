@@ -1,49 +1,42 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline; }
+@keyframes load1 {
+  0%, 80%, 100% {
+    box-shadow: 0 0;
+    height: 4em; }
+  40% {
+    box-shadow: 0 -2em;
+    height: 5em; } }
 
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-  display: block; }
-
-body {
-  line-height: 1; }
-
-ol, ul {
-  list-style: none; }
-
-blockquote, q {
-  quotes: none; }
-
-blockquote:before, blockquote:after,
-q:before, q:after {
-  content: '';
-  content: none; }
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0; }
+.loader {
+  background: #c17fee;
+  animation: load1 1s infinite ease-in-out;
+  width: 1em;
+  height: 4em;
+  color: #c17fee;
+  text-indent: -9999em;
+  margin: 88px auto;
+  position: relative;
+  font-size: 11px;
+  transform: translateZ(0);
+  animation-delay: -0.16s; }
+  .loader:before {
+    background: #c17fee;
+    animation: load1 1s infinite ease-in-out;
+    width: 1em;
+    height: 4em;
+    position: absolute;
+    top: 0;
+    content: '';
+    left: -1.5em;
+    animation-delay: -0.32s; }
+  .loader:after {
+    background: #c17fee;
+    animation: load1 1s infinite ease-in-out;
+    width: 1em;
+    height: 4em;
+    position: absolute;
+    top: 0;
+    content: '';
+    left: 1.5em; }
 
 h1, h2, h3, h4, h5, p, a, span {
   font-family: Roboto; }
@@ -53,6 +46,46 @@ h1, h2, h3, h4, h5, p, a, span {
   h1::selection, h2::selection, h3::selection, h4::selection, h5::selection, p::selection, a::selection, span::selection {
     background-color: #c17fee;
     color: #fff; }
+  h1.center, h2.center, h3.center, h4.center, h5.center, p.center, a.center, span.center {
+    text-align: center; }
+
+img.placeholder {
+  min-width: 100%;
+  min-height: 100%;
+  max-height: 200px;
+  background-size: 100%;
+  background-repeat: no-repeat; }
+
+.primary {
+  color: #c17fee; }
+
+i.fa-rocket {
+  color: #c17fee; }
 
 .column.center {
   margin: 0 auto; }
+
+.post {
+  margin-bottom: 28px;
+  border-bottom: 1px solid #c17fee;
+  padding-bottom: 1rem; }
+  .post a {
+    display: block;
+    float: left;
+    width: 100%;
+    height: 100%; }
+
+.sub-search {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+  .sub-search input {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 9;
+    -ms-flex: 9;
+    flex: 9; }
+  .sub-search button {
+    margin-left: 2%;
+    text-align: center; }
